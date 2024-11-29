@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compartir Link</title>
+</head>
+<body>
+    <h1>Pinki Cerebro</h1>
+    <h2>Finch</h2>
+    
+    <!-- Enlace clickeable -->
+    <a href="https://terabox.com/s/1UQsVqjoRtcgIM9P5xqpcgw" target="_blank" rel="noopener noreferrer">Ver Finch</a>
+    
+    <br><br>
+
+    <!-- Botón para copiar al portapapeles -->
+    <button onclick="copyToClipboard()">Copiar enlace</button>
+    
+    <!-- Campo de texto con el enlace -->
+    <input type="text" id="shareLink" value="https://terabox.com/s/1UQsVqjoRtcgIM9P5xqpcgw" readonly>
+
+    <script>
+        function copyToClipboard() {
+            const link = document.getElementById('shareLink');
+            link.select();
+            link.setSelectionRange(0, 99999); // Para móviles
+            navigator.clipboard.writeText(link.value).then(() => {
+                alert('¡Enlace copiado al portapapeles!');
+            }).catch(err => {
+                console.error('Error al copiar: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
